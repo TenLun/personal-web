@@ -1,14 +1,15 @@
 import './assets/main.css'
 
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
 import App from './App.vue'
-import router from './router'
+
+import Home from './views/HomeView.vue'
+import About from './views/AboutView.vue'
+import Badge from './components/Badge.vue'
 
 const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
+app.component('home', Home)
+app.component('about', About)
+app.component('badge', Badge)
 app.mount('#app')
